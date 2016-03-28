@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.hp.maopaonews">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
+    <uses-permission android:name="android.permission.WRITE_APN_SETTINGS" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.RESTART_PACKAGES"></uses-permission>
+
+    <application
+
+        android:allowBackup="true"
+        android:icon="@drawable/app_icon"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".Activities.WelcomeActivity"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".Activities.MainActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="冒泡新闻"
+            android:screenOrientation="portrait" />
+     <!--   <receiver android:name=".BroadReceiver.MyReceiver">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+        </receiver>-->
+        <activity
+            android:name=".Activities.WebViewActivity"
+            android:label="WebViewActivity" />
+        <activity
+            android:name=".Activities.XinWenXiActivity"
+            android:label="XinWenXiActivity" />
+        <activity
+            android:name=".Activities.WeatherActivity"
+            android:label="WeatherActivity" />
+        <activity
+            android:name=".Activities.SearchActivity"
+            android:label="SearchActivity" />
+        <activity
+            android:name=".Activities.YueDuDetialActivity"
+            android:label="YueDuDetialActivity" />
+        <activity
+            android:name=".Activities.PictureActivity"
+            android:label="PictureActivity" />
+
+        <activity
+            android:name=".wxapi.WXEntryActivity"
+            android:launchMode="singleTask"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+
+        <!--分享QQ好友需要的-->
+        <activity
+            android:name="com.tencent.tauth.AuthActivity"
+            android:launchMode="singleTask"
+            android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="tencent1105028083" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.tencent.connect.common.AssistActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+   <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="56458e8c67e58e7842000364" />
+
+        <!--腾讯微博 QQ空间 新浪微博需要需要的-->
+        <activity
+            android:name="com.umeng.socialize.view.ShareActivity"
+            android:configChanges="orientation|keyboard"
+            android:launchMode="singleTask"
+            android:noHistory="true"
+            android:theme="@style/Theme.UMDialog"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+        <!--kankan -->
+        <activity
+            android:name="com.umeng.socialize.view.CommentActivity"
+            android:configChanges="orientation|keyboard"
+            android:theme="@style/Theme.UMDefault" />
+        <activity
+            android:name="com.umeng.socialize.view.CommentDetail"
+            android:configChanges="orientation|keyboard"
+            android:noHistory="true"
+            android:theme="@style/Theme.UMDefault" />
+        <activity
+            android:name="com.umeng.socialize.view.CommentDetailNoMap"
+            android:configChanges="orientation|keyboard"
+            android:noHistory="true"
+            android:theme="@style/Theme.UMDefault" />
+
+        <!-- 人人SSO授权所需的OAuthActivity -->
+        <activity
+            android:name="com.renn.rennsdk.oauth.OAuthActivity"
+            android:configChanges="orientation|navigation|keyboardHidden" />
+
+
+        <activity android:name=".Activities.LoginActivity"
+            android:label="LoginActivity"/>
+        <activity android:name=".Activities.RegisterActivity"
+                  android:label="RegisterActivity"/>
+        <activity android:name=".Activities.Setting_headpage"
+            android:label="Setting_headpage"/>
+        <activity android:name=".Activities.Setting_set_page"
+            android:label="设置"
+            android:theme="@style/AppTheme"/>
+        <activity android:name=".Activities.PrivateActivity"
+            android:label="PrivateActivity"
+            android:theme="@style/AppTheme"/>
+          <activity android:name=".Activities.ReadHistoryActivity"
+              android:label="ReadHistoryActivity"/>
+        <activity android:name=".Activities.Setting_glodmall"
+            android:label="金币商城"/>
+        <activity android:name=".Activities.Setting_my_Task"
+            android:label="我的任务"/>
+        <activity android:name=".Activities.Task_ShuoMing"
+            android:label="欢迎来到火星"/>
+        <activity android:name=".Activities.MyWallet"
+            android:label="我的钱包"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".Activities.LocalServiceActivity"
+            android:label="身边的服务"/>
+    </application>
+
+</manifest>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+  <PreferenceCategory android:title="基本信息">
+      <Preference android:title="邮箱"
+      android:key="email"/>
+
+      <Preference android:title="头像"
+      android:key="head"/>
+      <Preference android:title="昵称"
+      android:key="name"/>
+      <Preference android:key="gengtie"
+          android:title="匿名更贴"
+          android:summary="其他网友将不会看到你的用户名，头像和个人主页"/>
+
+     <Preference android:title="阅读口味"
+      android:key="read"/>
+  </PreferenceCategory>
+
+    <PreferenceCategory android:title="其他信息">
+
+        <Preference android:title="我的金币"
+        android:key="my_gold"/>
+        <Preference android:title="我的等级"
+        android:key="elevel"/>
+        <Preference android:title="我的道具"
+        android:key="my_props"/>
+       <Preference android:title="打赏记录"
+        android:key="playing_records"/>
+        <Preference android:title="退出"
+            android:key="quitting"/>
+
+    </PreferenceCategory>
+
+
+
+</PreferenceScreen>

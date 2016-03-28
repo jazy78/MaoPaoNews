@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="账号设置">
+        <Preference
+            android:key="private_set"
+            android:title="个人设置" />
+        <Preference
+            android:key="binding_platform"
+            android:title="绑定其他平台" />
+
+
+    </PreferenceCategory>
+    <PreferenceCategory android:title="系统设置">
+        <Preference
+            android:key="column-setting"
+            android:title="栏目插件设置" />
+        <Preference
+            android:key="font_setting"
+            android:title="字体设置" />
+        <Preference
+            android:key="font_size"
+            android:title="正文字号" />
+        <SwitchPreference android:key="news_push"
+            android:title="要闻推送"
+            android:defaultValue="true"/>
+        <SwitchPreference android:key="wifi"
+            android:title="Wi-Fi自动离线"
+            android:defaultValue="true"/>
+        <SwitchPreference android:key="no_wifi_download"
+            android:title="非Wi-Fi网络不下载图片"
+            android:defaultValue="true"/>
+        <SwitchPreference android:key="auto_download"
+            android:title="列表自动加载更多"
+            android:defaultValue="true"/>
+        <SwitchPreference android:key="headlines_smart_sort"
+            android:title="头条智能排序"
+            android:defaultValue="true"/>
+        <Preference
+            android:key="clear_cache"
+            android:title="清楚缓存"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="其他设置">
+
+        <Preference
+            android:key="check_update"
+            android:title="检查更新"/>
+
+        <Preference
+            android:key="help_feedback"
+            android:title="帮助与反馈"/>
+        <Preference
+            android:key="recommmend_applcation"
+            android:title="应用推荐"/>
+        <Preference
+            android:key="score"
+            android:title="为MaopaoNews评分"/>
+        <Preference
+            android:key="cover_story"
+            android:title="封面故事"/>
+        <Preference
+        android:key="about"
+        android:title="关于"/>
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
