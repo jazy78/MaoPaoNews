@@ -44,8 +44,6 @@ public class CustomProgressDialog extends ProgressDialog {
     private void initData(){
         mImageView.setBackgroundResource(mResid);
         mAnimation=(AnimationDrawable)mImageView.getBackground();
-       /* Animation animation= AnimationUtils.loadAnimation(getContext(),R.anim.animation_frame);
-        animation.start();*/
         mImageView.post(new Runnable() {
             @Override
             public void run() {
