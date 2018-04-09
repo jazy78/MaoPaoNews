@@ -18,7 +18,6 @@ public class CommonUtil {
         ConnectivityManager manager=(ConnectivityManager)context.getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo info=manager.getActiveNetworkInfo();
         if(info!=null){
-
             return  true;
         }else {
             return false;

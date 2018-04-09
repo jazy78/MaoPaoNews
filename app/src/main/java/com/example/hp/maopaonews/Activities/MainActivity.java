@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main1);
         InstanceActivtiyApplication();
+        //判断是否连网
         checkNetState();
 
         //定义的广播只接受固定的广播信息
@@ -104,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
       });
-
+        //默认选择第一页
         contentradiogroup.check(R.id.rb_xinwen);
 
     }
@@ -133,7 +134,6 @@ public class MainActivity extends AppCompatActivity {
 
                                 }
                             }).show();
-
                 }
             });
 
@@ -143,16 +143,13 @@ public class MainActivity extends AppCompatActivity {
                     if(Build.VERSION.SDK_INT>10){
                         //启动手机的设置Activity
                         startActivity(new Intent(Settings.ACTION_SETTINGS));
-
                     }else {
-
                         startActivity(new Intent(android.provider.Settings.ACTION_WIRELESS_SETTINGS));
                     }
                 }
             });
             builder.create().show();
         }
-
     }
 
 

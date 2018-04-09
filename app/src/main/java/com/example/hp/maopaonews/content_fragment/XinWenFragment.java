@@ -62,7 +62,6 @@ public class XinWenFragment extends Fragment implements View.OnClickListener, We
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         if (contentView == null) {
-
             contentView = initView(inflater);
         }
 

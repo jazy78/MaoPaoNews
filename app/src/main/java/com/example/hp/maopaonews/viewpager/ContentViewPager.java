@@ -21,8 +21,7 @@ public class ContentViewPager  extends ViewPager{
     public static  boolean GO_TOUCH_CHILD=true;
 
 
-    ////////不拦截子view的触摸事件
-
+    //让触摸事件传递下去，不拦截子view的触摸事件，让子view消耗触摸事件
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
         if(GO_TOUCH_CHILD){

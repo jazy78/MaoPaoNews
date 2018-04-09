@@ -9,15 +9,30 @@ import android.widget.ImageView;
 import com.example.hp.maopaonews.CostomProgressDialog.CustomProgressDialog;
 import com.example.hp.maopaonews.R;
 import com.lidroid.xutils.BitmapUtils;
+import com.lidroid.xutils.DbUtils;
 import com.lidroid.xutils.HttpUtils;
 import com.lidroid.xutils.bitmap.BitmapDisplayConfig;
 import com.lidroid.xutils.bitmap.callback.BitmapLoadCallBack;
 import com.lidroid.xutils.bitmap.callback.BitmapLoadFrom;
+import com.lidroid.xutils.db.table.KeyValue;
 import com.lidroid.xutils.exception.HttpException;
 import com.lidroid.xutils.http.HttpHandler;
+import com.lidroid.xutils.http.RequestParams;
 import com.lidroid.xutils.http.ResponseInfo;
 import com.lidroid.xutils.http.callback.RequestCallBack;
 import com.lidroid.xutils.http.client.HttpRequest;
+import com.lidroid.xutils.http.client.entity.FileUploadEntity;
+import com.lidroid.xutils.http.client.multipart.MultipartEntity;
+import com.lidroid.xutils.http.client.multipart.content.ContentBody;
+import com.lidroid.xutils.http.client.multipart.content.FileBody;
+
+import org.apache.http.entity.StringEntity;
+import org.xutils.http.body.MultipartBody;
+
+import java.io.File;
+import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by hp on 2016/1/6.
@@ -31,9 +46,25 @@ public class XutilsGetData {
     private String data=null;
     private HttpHandler<String> hand;
     private static  CustomProgressDialog dialog;
+    private DbUtils dbUtils;
+
+    private static String JSONTYPE="multipart/form-data";
+    private static String FORMTYPE="applicaton/json";
 
 
+   public void xUtilsSendHttpRequest() throws UnsupportedEncodingException {
 
+       RequestParams params=new RequestParams();
+       //json传送
+       params.setContentType(FORMTYPE);
+       params.setBodyEntity(new StringEntity("jsonString","UTF-8"));
+
+       //表单传送
+       params.setContentType(FORMTYPE);
+       params.addBodyParameter("files",new File(""));
+       params.addBodyParameter("files",new File(".."));
+
+   }
 
     public void xUtilsHttp(final Context context, final  String url, final CallBackHttp callback, final boolean isprogressdialog){
         http=new HttpUtils();
@@ -47,6 +78,7 @@ public class XutilsGetData {
         }
         //打开子线程请求网络
         final CustomProgressDialog finalDialog = dialog;
+
         hand=http.send(HttpRequest.HttpMethod.GET, url, new RequestCallBack<String>() {
             @Override
             public void onSuccess(ResponseInfo<String> responseInfo) {

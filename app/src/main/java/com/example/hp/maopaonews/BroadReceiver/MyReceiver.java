@@ -22,7 +22,6 @@ public class MyReceiver extends BroadcastReceiver {
             Toast.makeText(context, "正在使用wifi连接,请放心使用......", Toast.LENGTH_SHORT).show();
         } else if (mobNetInfo.isConnected()) {
             Toast.makeText(context, "检测到正在使用移动网络,可能会消耗很多流量,建议在wifi下浏览.....", Toast.LENGTH_SHORT).show();
-
         }
     }
 }
